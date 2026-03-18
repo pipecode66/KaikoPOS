@@ -18,7 +18,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Sandeli POS MVP",
+  title: "KaikoPOS MVP",
   description: "Cloud restaurant operations foundation for POS, kitchen, inventory, and cash management."
 };
 

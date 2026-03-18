@@ -22,7 +22,7 @@ async function bootstrap() {
   app.useGlobalInterceptors(new LoggingInterceptor(reflector));
 
   const swaggerConfig = new DocumentBuilder()
-    .setTitle("Sandeli POS API")
+    .setTitle("KaikoPOS API")
     .setDescription("Operational MVP API for restaurant and cafe management")
     .setVersion("0.1.0")
     .addBearerAuth()

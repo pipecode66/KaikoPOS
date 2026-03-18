@@ -12,7 +12,7 @@ export function Sidebar() {
   return (
     <aside className="w-full rounded-[24px] border border-white/60 bg-white/80 p-4 shadow-soft backdrop-blur lg:w-[280px]">
       <div className="rounded-[20px] bg-brand-primary/35 p-5">
-        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-muted">Sandeli POS</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-muted">KAIKOPOS</p>
         <h2 className="mt-2 text-2xl font-semibold text-brand-text">Restaurant Ops</h2>
         <p className="mt-1 text-sm text-brand-muted">MVP operativo para caja, mesas, cocina e inventario.</p>
       </div>

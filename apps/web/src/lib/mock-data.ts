@@ -116,11 +116,11 @@ export const ingredients: IngredientRow[] = [
 ];
 
 export const users: UserRow[] = [
-  { id: "u1", name: "Sara Admin", email: "admin@sandeli.local", role: "Admin", status: "active", lastAccess: "Hoy 08:01" },
-  { id: "u2", name: "Carlos Caja", email: "caja@sandeli.local", role: "Cashier", status: "active", lastAccess: "Hoy 14:05" },
-  { id: "u3", name: "Laura Mesas", email: "mesa@sandeli.local", role: "Waiter", status: "active", lastAccess: "Hoy 13:58" },
-  { id: "u4", name: "Mateo Cocina", email: "kds@sandeli.local", role: "Kitchen", status: "active", lastAccess: "Hoy 14:12" },
-  { id: "u5", name: "Sofia Backup", email: "backup@sandeli.local", role: "Cashier", status: "inactive", lastAccess: "Ayer 18:33" }
+  { id: "u1", name: "Admin Kaiko", email: "admin@sandeli.com", role: "Admin", status: "active", lastAccess: "Hoy 08:01" },
+  { id: "u2", name: "Carlos Caja", email: "caja@sandeli.com", role: "Cashier", status: "active", lastAccess: "Hoy 14:05" },
+  { id: "u3", name: "Laura Mesas", email: "mesa@sandeli.com", role: "Waiter", status: "active", lastAccess: "Hoy 13:58" },
+  { id: "u4", name: "Mateo Cocina", email: "kds@sandeli.com", role: "Kitchen", status: "active", lastAccess: "Hoy 14:12" },
+  { id: "u5", name: "Sofia Backup", email: "backup@sandeli.com", role: "Cashier", status: "inactive", lastAccess: "Ayer 18:33" }
 ];
 
 export const auditTrail = [

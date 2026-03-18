@@ -1,4 +1,4 @@
-# Sandeli POS MVP
+# KaikoPOS MVP
 
 Cloud-based restaurant management foundation focused on fast restaurant operations: login, open register, create order, send to kitchen, receive payment, discount inventory, report, and close register.
 
@@ -23,10 +23,10 @@ Cloud-based restaurant management foundation focused on fast restaurant operatio
 
 ## Demo Credentials
 
-- `admin@sandeli.local` / `Demo1234!`
-- `caja@sandeli.local` / `Demo1234!`
-- `mesa@sandeli.local` / `Demo1234!`
-- `kds@sandeli.local` / `Demo1234!`
+- `admin@sandeli.com` / `sandeli12@`
+- `caja@sandeli.com` / `sandeli12@`
+- `mesa@sandeli.com` / `sandeli12@`
+- `kds@sandeli.com` / `sandeli12@`
 
 ## Notes
 

@@ -127,16 +127,16 @@ async function main() {
     }
     return roleId;
   };
-  const passwordHash = await bcrypt.hash("Demo1234!", 10);
+  const passwordHash = await bcrypt.hash("sandeli12@", 10);
 
   const [adminUser, cashierUser, waiterUser, kitchenUser] = await Promise.all([
     prisma.user.create({
       data: {
-        email: "admin@sandeli.local",
+        email: "admin@sandeli.com",
         passwordHash,
-        firstName: "Sara",
-        lastName: "Mendoza",
-        displayName: "Sara Admin",
+        firstName: "Admin",
+        lastName: "Kaiko",
+        displayName: "Admin Kaiko",
         roles: {
           create: {
             roleId: getRoleId(RoleCode.ADMIN)
@@ -146,7 +146,7 @@ async function main() {
     }),
     prisma.user.create({
       data: {
-        email: "caja@sandeli.local",
+        email: "caja@sandeli.com",
         passwordHash,
         firstName: "Carlos",
         lastName: "Rojas",
@@ -160,7 +160,7 @@ async function main() {
     }),
     prisma.user.create({
       data: {
-        email: "mesa@sandeli.local",
+        email: "mesa@sandeli.com",
         passwordHash,
         firstName: "Laura",
         lastName: "Paz",
@@ -174,7 +174,7 @@ async function main() {
     }),
     prisma.user.create({
       data: {
-        email: "kds@sandeli.local",
+        email: "kds@sandeli.com",
         passwordHash,
         firstName: "Mateo",
         lastName: "Chef",
@@ -501,10 +501,10 @@ async function main() {
 
   console.log("Seed completed");
   console.table([
-    { user: adminUser.email, password: "Demo1234!" },
-    { user: cashierUser.email, password: "Demo1234!" },
-    { user: waiterUser.email, password: "Demo1234!" },
-    { user: kitchenUser.email, password: "Demo1234!" }
+    { user: adminUser.email, password: "sandeli12@" },
+    { user: cashierUser.email, password: "sandeli12@" },
+    { user: waiterUser.email, password: "sandeli12@" },
+    { user: kitchenUser.email, password: "sandeli12@" }
   ]);
 }
 

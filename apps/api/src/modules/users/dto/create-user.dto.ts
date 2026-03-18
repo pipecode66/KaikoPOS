@@ -3,11 +3,11 @@ import { RoleCode } from "@prisma/client";
 import { ArrayMinSize, IsArray, IsEmail, IsEnum, IsOptional, IsString, MinLength } from "class-validator";
 
 export class CreateUserDto {
-  @ApiProperty({ example: "new.cashier@sandeli.local" })
+  @ApiProperty({ example: "new.cashier@sandeli.com" })
   @IsEmail()
   email!: string;
 
-  @ApiProperty({ example: "Demo1234!" })
+  @ApiProperty({ example: "sandeli12@" })
   @IsString()
   @MinLength(8)
   password!: string;
