@@ -14,8 +14,8 @@
   --color-warning: #ffe5b4;
   --color-info: #d6e4ff;
   --radius-xl: 16px;
-  --shadow-soft: 0 12px 40px rgba(43, 43, 43, 0.08);
-  --shadow-lifted: 0 22px 60px rgba(200, 162, 200, 0.22);
+  --shadow-soft: 0 18px 46px rgba(43, 43, 43, 0.08);
+  --shadow-lifted: 0 24px 70px rgba(200, 162, 200, 0.24);
 }
 
 * {
@@ -31,8 +31,9 @@ body {
   margin: 0;
   font-family: var(--font-inter), sans-serif;
   background:
-    radial-gradient(circle at top, rgba(200, 162, 200, 0.14), transparent 30%),
-    linear-gradient(180deg, #ffffff 0%, #fbf8fb 100%);
+    radial-gradient(circle at 15% 20%, rgba(200, 162, 200, 0.18), transparent 22%),
+    radial-gradient(circle at 85% 15%, rgba(232, 216, 232, 0.5), transparent 26%),
+    linear-gradient(180deg, #fffdfd 0%, #fbf7fb 48%, #f7f4f8 100%);
   color: var(--color-text-primary);
 }
 
@@ -57,4 +58,16 @@ select {
 
 ::selection {
   background: rgba(200, 162, 200, 0.28);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.12), transparent 55%);
 }

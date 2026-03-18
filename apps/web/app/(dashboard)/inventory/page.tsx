@@ -13,6 +13,7 @@ export default function InventoryPage() {
         eyebrow="Inventario"
         title="Ingredientes y alertas"
         description="Recetas base, stock actual, minimos y trazabilidad para descuento automatico al completar la venta."
+        chips={["Minimos visibles", "Costo por unidad", "Base para descuento automatico"]}
       />
 
       <div className="grid gap-4 md:grid-cols-3">

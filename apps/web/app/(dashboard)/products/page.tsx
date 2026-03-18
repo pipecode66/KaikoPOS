@@ -12,6 +12,7 @@ export default function ProductsPage() {
         eyebrow="Catalogo"
         title="Productos y categorias"
         description="Gestion base de precios, disponibilidad, notas para cocina y referencias de receta."
+        chips={["Disponibilidad", "Precio de venta", "Notas para cocina"]}
         actions={<Button>Nuevo producto</Button>}
       />
 

@@ -14,13 +14,13 @@ export function TableTile({ table }: { table: TableCard }) {
         <div>
           <p className="text-xl font-semibold text-brand-text">{table.name}</p>
           <p className="mt-1 text-sm text-brand-muted">
-            {table.area} · {table.seats} puestos
+            {table.area} / {table.seats} puestos
           </p>
         </div>
         <Badge tone={tone}>{label}</Badge>
       </div>
 
-      <div className="mt-5 rounded-[18px] bg-brand-surface p-4">
+      <div className="mt-5 rounded-[20px] bg-brand-surface/90 p-4">
         <p className="text-xs uppercase tracking-[0.24em] text-brand-muted">Ticket actual</p>
         <p className="mt-2 text-sm font-medium text-brand-text">{table.ticket ?? "Sin pedido activo"}</p>
         <p className="mt-1 text-lg font-semibold text-brand-text">

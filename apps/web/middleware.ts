@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { AUTH_COOKIE_NAME } from "@/lib/auth";
+import { AUTH_TOKEN_COOKIE_NAME } from "@/lib/auth";
 
 const protectedPaths = ["/dashboard", "/pos", "/tables", "/kitchen", "/cash-register", "/products", "/inventory", "/reports", "/users"];
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const isAuthenticated = Boolean(request.cookies.get(AUTH_COOKIE_NAME)?.value);
+  const isAuthenticated = Boolean(request.cookies.get(AUTH_TOKEN_COOKIE_NAME)?.value);
   const isProtected = protectedPaths.some((path) => pathname === path || pathname.startsWith(`${path}/`));
 
   if (pathname === "/login" && isAuthenticated) {

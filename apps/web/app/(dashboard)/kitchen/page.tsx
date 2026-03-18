@@ -9,6 +9,7 @@ export default function KitchenPage() {
         eyebrow="Kitchen display"
         title="Cocina en tiempo real"
         description="Tickets organizados por estado, notas visibles y estructura preparada para WebSockets sobre Socket.IO."
+        chips={["Socket namespace /kitchen", "Notas visibles", "Estados por columna"]}
         actions={<Button variant="secondary">Filtrar tickets</Button>}
       />
       <KitchenBoard />

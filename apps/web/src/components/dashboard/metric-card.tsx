@@ -15,15 +15,31 @@ export function MetricCard({
   const tone = accent === "error" ? "danger" : accent;
 
   return (
-    <Card className="p-5">
+    <Card className="overflow-hidden p-5">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="text-sm text-brand-muted">{label}</p>
-          <p className="mt-3 text-3xl font-semibold tracking-tight text-brand-text">
+          <p className="text-sm uppercase tracking-[0.16em] text-brand-muted">{label}</p>
+          <p className="mt-4 text-3xl font-semibold tracking-tight text-brand-text">
             {isMoney ? formatCurrency(value) : formatNumber(value)}
           </p>
         </div>
         <Badge tone={tone}>{accent}</Badge>
+      </div>
+      <div className="mt-5 h-1.5 rounded-full bg-brand-surface">
+        <div
+          className="h-full rounded-full"
+          style={{
+            width: accent === "success" ? "82%" : accent === "info" ? "68%" : accent === "warning" ? "54%" : "36%",
+            backgroundColor:
+              accent === "success"
+                ? "var(--color-success)"
+                : accent === "info"
+                  ? "var(--color-info)"
+                  : accent === "warning"
+                    ? "var(--color-warning)"
+                    : "var(--color-error)"
+          }}
+        />
       </div>
     </Card>
   );

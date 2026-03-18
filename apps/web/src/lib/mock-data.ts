@@ -9,15 +9,15 @@ import type {
 } from "./types";
 
 export const navItems = [
-  { href: "/dashboard", label: "Dashboard", caption: "Resumen operativo" },
-  { href: "/pos", label: "POS", caption: "Venta rapida" },
-  { href: "/tables", label: "Mesas", caption: "Salon y barra" },
-  { href: "/kitchen", label: "Cocina", caption: "KDS en vivo" },
-  { href: "/cash-register", label: "Caja", caption: "Turnos y arqueo" },
-  { href: "/products", label: "Productos", caption: "Catalogo" },
-  { href: "/inventory", label: "Inventario", caption: "Ingredientes" },
-  { href: "/reports", label: "Reportes", caption: "Ventas y margenes" },
-  { href: "/users", label: "Usuarios", caption: "Accesos y auditoria" }
+  { href: "/dashboard", label: "Dashboard", caption: "Resumen operativo", section: "Operacion" },
+  { href: "/pos", label: "POS", caption: "Venta rapida", section: "Operacion" },
+  { href: "/tables", label: "Mesas", caption: "Salon y barra", section: "Operacion" },
+  { href: "/kitchen", label: "Cocina", caption: "KDS en vivo", section: "Operacion" },
+  { href: "/cash-register", label: "Caja", caption: "Turnos y arqueo", section: "Operacion" },
+  { href: "/products", label: "Productos", caption: "Catalogo", section: "Gestion" },
+  { href: "/inventory", label: "Inventario", caption: "Ingredientes", section: "Gestion" },
+  { href: "/reports", label: "Reportes", caption: "Ventas y margenes", section: "Gestion" },
+  { href: "/users", label: "Usuarios", caption: "Accesos y auditoria", section: "Gestion" }
 ];
 
 export const categories: ProductCategory[] = [

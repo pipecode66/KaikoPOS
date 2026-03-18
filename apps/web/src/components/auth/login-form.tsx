@@ -5,12 +5,12 @@ import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { DEMO_ADMIN_EMAIL, DEMO_ADMIN_PASSWORD } from "@/lib/auth";
+import { INITIAL_ADMIN_EMAIL, INITIAL_ADMIN_PASSWORD } from "@/lib/auth";
 
 export function LoginForm() {
   const router = useRouter();
-  const [email, setEmail] = useState(DEMO_ADMIN_EMAIL);
-  const [password, setPassword] = useState(DEMO_ADMIN_PASSWORD);
+  const [email, setEmail] = useState(INITIAL_ADMIN_EMAIL);
+  const [password, setPassword] = useState(INITIAL_ADMIN_PASSWORD);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -20,7 +20,7 @@ export function LoginForm() {
     setError("");
 
     try {
-      const response = await fetch("/api/demo-auth/login", {
+      const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -64,7 +64,7 @@ export function LoginForm() {
         />
       </div>
 
-      {error ? <p className="rounded-[16px] bg-brand-error px-4 py-3 text-sm text-brand-text">{error}</p> : null}
+      {error ? <p className="rounded-[18px] bg-brand-error/80 px-4 py-3 text-sm text-brand-text">{error}</p> : null}
 
       <Button size="lg" className="mt-2 w-full" type="submit" disabled={loading}>
         {loading ? "Validando acceso..." : "Entrar al sistema"}

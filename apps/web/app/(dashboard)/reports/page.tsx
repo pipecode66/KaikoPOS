@@ -15,6 +15,7 @@ export default function ReportsPage() {
         eyebrow="Analitica"
         title="Reportes operativos"
         description="Resumen diario, ventas por metodo, productos lideres y estimacion de costo y utilidad."
+        chips={["Ventas netas", "Costo estimado", "Utilidad esperada"]}
       />
 
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">

@@ -12,6 +12,7 @@ export default function CashRegisterPage() {
         eyebrow="Caja"
         title="Apertura, movimientos y cierre"
         description="Seguimiento del turno con monto esperado, conciliacion y totales por metodo de pago."
+        chips={["Turno actual", "Arqueo listo", "Totales por metodo"]}
         actions={<Button>Abrir nuevo turno</Button>}
       />
 

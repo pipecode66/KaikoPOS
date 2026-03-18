@@ -2,6 +2,7 @@ export type NavItem = {
   href: string;
   label: string;
   caption: string;
+  section: "Operacion" | "Gestion";
 };
 
 export type ProductCategory = {

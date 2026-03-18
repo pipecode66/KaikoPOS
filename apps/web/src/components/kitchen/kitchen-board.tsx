@@ -26,7 +26,7 @@ export function KitchenBoard() {
             {kitchenTickets
               .filter((ticket) => ticket.status === column.id)
               .map((ticket) => (
-                <div key={ticket.id} className="rounded-[20px] bg-brand-surface p-4">
+                <div key={ticket.id} className="rounded-[22px] bg-brand-surface/90 p-4">
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <p className="font-semibold text-brand-text">{ticket.orderNumber}</p>
@@ -38,7 +38,7 @@ export function KitchenBoard() {
                   <div className="mt-3 space-y-1 text-sm text-brand-text">
                     {ticket.items.map((item) => (
                       <p key={item.name}>
-                        {item.qty} × {item.name}
+                        {item.qty} x {item.name}
                       </p>
                     ))}
                   </div>

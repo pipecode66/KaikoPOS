@@ -6,8 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { categories, products } from "@/lib/mock-data";
 import { formatCurrency } from "@/lib/format";
+import { categories, products } from "@/lib/mock-data";
 import { usePosStore } from "@/lib/store/use-pos-store";
 import { cn } from "@/lib/utils";
 
@@ -38,6 +38,7 @@ export function PosWorkstation() {
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const service = orderType === "delivery" ? 2500 : 0;
   const total = subtotal + service;
+  const units = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <div className="grid gap-4 xl:grid-cols-[260px_minmax(0,1fr)_380px]">
@@ -49,8 +50,8 @@ export function PosWorkstation() {
               key={category.id}
               onClick={() => setCategory(category.id)}
               className={cn(
-                "flex w-full items-center justify-between rounded-[18px] px-4 py-4 text-left transition",
-                activeCategoryId === category.id ? "bg-brand-secondary shadow-soft" : "bg-brand-surface hover:bg-brand-secondary/40"
+                "flex w-full items-center justify-between rounded-[20px] px-4 py-4 text-left transition",
+                activeCategoryId === category.id ? "bg-white shadow-soft" : "bg-brand-surface/85 hover:bg-brand-secondary/40"
               )}
             >
               <span>
@@ -64,13 +65,26 @@ export function PosWorkstation() {
       </Card>
 
       <div className="space-y-4">
-        <Card className="p-4">
+        <Card className="overflow-hidden border-none bg-[linear-gradient(140deg,rgba(200,162,200,0.24),rgba(255,255,255,0.94))] p-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-muted">Venta rapida</p>
               <h2 className="mt-1 text-2xl font-semibold text-brand-text">Selecciona productos</h2>
+              <p className="mt-2 text-sm text-brand-muted">Dos toques para vender: agregar, revisar y cobrar.</p>
             </div>
             <Badge tone="success">{feedback}</Badge>
+          </div>
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            {[
+              ["Items", `${units}`],
+              ["Tipo de orden", orderType],
+              ["Pago", paymentMethod]
+            ].map(([label, value]) => (
+              <div key={label} className="rounded-[20px] bg-white/90 px-4 py-4 shadow-soft">
+                <p className="text-xs uppercase tracking-[0.2em] text-brand-muted">{label}</p>
+                <p className="mt-2 text-lg font-semibold capitalize text-brand-text">{value}</p>
+              </div>
+            ))}
           </div>
         </Card>
 
@@ -107,7 +121,7 @@ export function PosWorkstation() {
       <Card className="p-4">
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-muted">Pedido actual</p>
 
-        <div className="mt-4 grid grid-cols-3 gap-2 rounded-[20px] bg-brand-surface p-2">
+        <div className="mt-4 grid grid-cols-3 gap-2 rounded-[22px] bg-brand-surface/90 p-2">
           {orderTypes.map((type) => (
             <button
               key={type}
@@ -129,7 +143,7 @@ export function PosWorkstation() {
             </div>
           ) : (
             cart.map((item) => (
-              <div key={item.productId} className="rounded-[20px] bg-brand-surface p-4">
+              <div key={item.productId} className="rounded-[22px] bg-brand-surface/90 p-4">
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="font-medium text-brand-text">{item.name}</p>
@@ -164,7 +178,7 @@ export function PosWorkstation() {
               onClick={() => setPaymentMethod(option)}
               className={cn(
                 "rounded-[18px] px-3 py-3 text-sm font-medium capitalize transition",
-                paymentMethod === option ? "bg-brand-primary text-brand-text shadow-soft" : "bg-brand-surface text-brand-muted"
+                paymentMethod === option ? "bg-brand-primary text-brand-text shadow-soft" : "bg-brand-surface/90 text-brand-muted"
               )}
             >
               {option}
@@ -172,7 +186,7 @@ export function PosWorkstation() {
           ))}
         </div>
 
-        <div className="mt-6 rounded-[22px] bg-brand-secondary/40 p-4">
+        <div className="mt-6 rounded-[24px] bg-brand-secondary/45 p-4">
           <div className="flex items-center justify-between text-sm text-brand-muted">
             <span>Subtotal</span>
             <span>{formatCurrency(subtotal)}</span>

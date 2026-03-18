@@ -11,6 +11,7 @@ export default function UsersPage() {
         eyebrow="Seguridad"
         title="Usuarios y auditoria"
         description="Asignacion de roles, activacion de cuentas y trazabilidad de acciones criticas del sistema."
+        chips={["Roles por modulo", "Estado de cuenta", "Audit trail"]}
         actions={<Button>Nuevo usuario</Button>}
       />
 
@@ -61,7 +62,7 @@ export default function UsersPage() {
                   <div>
                     <p className="font-medium text-brand-text">{entry.action}</p>
                     <p className="text-sm text-brand-muted">
-                      {entry.actor} · {entry.context}
+                      {entry.actor} / {entry.context}
                     </p>
                   </div>
                   <p className="text-sm text-brand-muted">{entry.time}</p>

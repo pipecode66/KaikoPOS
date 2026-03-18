@@ -10,6 +10,7 @@ export default function TablesPage() {
         eyebrow="Salon"
         title="Gestion de mesas"
         description="Estados claros para disponible, ocupada y pendiente de pago. Base lista para mover, unir o dividir pedidos."
+        chips={["Vista tactil", "Estados visibles", "Base para merge y split"]}
         actions={<Button>Nueva mesa rapida</Button>}
       />
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">

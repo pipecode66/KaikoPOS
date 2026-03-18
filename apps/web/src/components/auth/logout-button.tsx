@@ -13,7 +13,7 @@ export function LogoutButton() {
     setLoading(true);
 
     try {
-      await fetch("/api/demo-auth/logout", {
+      await fetch("/api/auth/logout", {
         method: "POST"
       });
     } finally {
